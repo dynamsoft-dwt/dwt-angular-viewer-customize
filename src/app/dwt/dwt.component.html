@@ -1,0 +1,25 @@
+<div id="container">
+  <button (click)="defaultDWT()">Generate a default WebTwain Instance</button>
+  <button (click)="noViewerDWT()">Generate a WebTwain Instance with no Viewer</button>
+  <br *ngIf="bDWObject2Exist" />
+  <br *ngIf="bDWObject2Exist" />
+  <button *ngIf="bDWObject2Exist" (click)="regularViewer()">Bind a regular viewer</button>
+  <button *ngIf="bDWObject2Exist" (click)="thumbViewer()">Bind a viewer with thumbnails</button>
+  <br />
+  <button *ngIf="bDWObject2Exist" (click)="editorViewer()">Bind a viewer with editor</button>
+  <button *ngIf="bDWObject2Exist" (click)="customViewer()">Bind a viewer with custom Element</button>
+  <br *ngIf="bDWObject2Exist" />
+  <br />
+  <select *ngIf="!bWASM" id="sources"></select>
+  <div id="captureButtons" style="display: none;">
+    <button *ngIf="!bWASM" (click)="acquireImage()">Acquire Images</button>
+    <button (click)="openImage()">Open Documents</button>
+  </div>
+  <div id="captureButtons2" style="display: none;">
+    <button *ngIf="!bWASM" (click)="acquireImage()" style="width:150px;height:220px;">Acquire Images</button><br />
+    <button (click)="openImage()" style="width:150px;height:220px;">Open Documents</button>
+  </div>
+  <br />
+  <div id="dwtcontrolContainer"></div>
+  <div id="dwtEditor"></div>
+</div>
